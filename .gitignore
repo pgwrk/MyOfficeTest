@@ -1,6 +1,3 @@
-# Add any directories, files, or patterns you don't want to be tracked by version control
-# Created by https://www.gitignore.io/api/android,java,macos
-
 ### Android ###
 # Built application files
 *.apk
