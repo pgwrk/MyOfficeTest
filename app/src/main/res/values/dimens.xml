@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_size">36dp</dimen>
+    <dimen name="idc_text_width">36dp</dimen>
+    <dimen name="idc_text_size">18sp</dimen>
+
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="normal_margin">16dp</dimen>
+    <dimen name="big_margin">32dp</dimen>
+</resources>
