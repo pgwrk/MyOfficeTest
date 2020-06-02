@@ -104,16 +104,4 @@ class MOTextRenderer : View {
             .build()
     }
 
-//    private fun invalidateTextPaintAndMeasurements() {
-//        textPaint.textSize = exampleDimension
-//        textPaint.color = exampleColor
-//        textPaint.typeface = Typeface.create("Arial", Typeface.BOLD_ITALIC)
-//
-//        _layout = StaticLayout.Builder.obtain(_exampleString, 0, _exampleString.length, textPaint, width - paddingStart - paddingEnd)
-//            .setAlignment(Layout.Alignment.ALIGN_CENTER)
-//            .build()
-//
-//        Log.d("MOTT", "invalidateTextPaintAndMeasurements. width=$width")
-//    }
-
 }

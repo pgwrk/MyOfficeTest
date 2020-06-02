@@ -41,10 +41,6 @@ internal class TextRendererViewModel(private val repo: MOTextRendererRepository)
 
     fun getTextPosition(viewWidth: Int, viewHeight: Int, textWidth: Int, textHeight: Int):MOPoint {
 
-//        if (viewSize.isNullOrZero() || textSize.isNullOrZero() ) {
-//            throw IllegalArgumentException("Dimensions were not specified")
-//        }
-
         val x = (viewWidth - textWidth) / 2f
         val y = (viewHeight - textHeight) / 2f
 
