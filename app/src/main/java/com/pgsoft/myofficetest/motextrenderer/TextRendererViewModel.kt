@@ -38,14 +38,7 @@ internal class TextRendererViewModel(private val repo: MOTextRendererRepository)
         Log.d("MOTT", "MOTextRendererViewModel.init()")
     }
 
-    @MainThread
-    fun setDimensions(viewWidth: Int, viewHeight: Int, textWidth: Int, textHeight: Int) {
 
-        viewSize = MOSize(viewWidth, viewHeight)
-        textSize = MOSize(textWidth, textHeight)
-    }
-
-    @MainThread
     fun getTextPosition(viewWidth: Int, viewHeight: Int, textWidth: Int, textHeight: Int):MOPoint {
 
 //        if (viewSize.isNullOrZero() || textSize.isNullOrZero() ) {
@@ -58,7 +51,6 @@ internal class TextRendererViewModel(private val repo: MOTextRendererRepository)
         return MOPoint(x, y)
     }
 
-    @MainThread
     override fun setTextAttributes(textAttributes: MOTextAttributes) {
         _textAttributes = textAttributes
         _textFormatChangedLiveData.value = Unit

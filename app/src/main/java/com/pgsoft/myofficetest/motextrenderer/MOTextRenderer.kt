@@ -13,6 +13,7 @@ import com.pgsoft.myofficetest.motextrenderer.converter.AlignConverter
 import com.pgsoft.myofficetest.motextrenderer.converter.FontSizeConverter
 import com.pgsoft.myofficetest.motextrenderer.converter.TypefaceConverter
 import org.koin.java.KoinJavaComponent.inject
+import java.lang.ref.WeakReference
 
 
 /**
@@ -24,14 +25,14 @@ class MOTextRenderer : View {
 
     private lateinit var textLayout: StaticLayout
     private val viewModel: TextRendererViewModel by inject(TextRendererViewModel::class.java)
-    private lateinit var lifecycleOwner: LifecycleOwner
+    private lateinit var lifecycleOwner: WeakReference<LifecycleOwner>
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle)
 
     fun setLifecycleOwner(lifecycleOwner: LifecycleOwner) {
-        this.lifecycleOwner = lifecycleOwner
+        this.lifecycleOwner = WeakReference(lifecycleOwner)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -73,10 +74,8 @@ class MOTextRenderer : View {
         canvas.restore()
     }
 
-
-
     private fun bindViewModel() {
-        viewModel.textChangedLiveData.observe(lifecycleOwner, Observer {
+        viewModel.textChangedLiveData.observe(lifecycleOwner.get()!!, Observer {
             updateTextAttrsAndRedraw()
         })
     }
